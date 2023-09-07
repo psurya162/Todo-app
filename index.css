@@ -185,6 +185,37 @@ border-radius: 10px;
     height: 25px;
     margin-left: 210px;
 }
+@media screen and (min-width:250px) and (max-width:500px){
+    #flex {
+        
+        flex-direction: column;
+        
+    }
+    #notask {
+        font-size: 28px;
+        font-weight: 500;
+        /* margin-left: 200px; */
+        color: white;
+    }
+    #mainbackbtn {
+        position: relative;
+        top: -3px;
+        left: -6px;
+    }
+    #task {
+        position: relative;
+        font-size: 40px;
+        font-weight: bolder;
+        color: white;
+        top: -72px;
+        /* left: -7px; */
+    }
+    #btnadd {
+        font-size: 30px;
+        position: absolute;
+        top: 116px;
+    }
+}
 
 
 
