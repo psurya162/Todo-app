@@ -194,8 +194,9 @@ border-radius: 10px;
     #notask {
         font-size: 28px;
         font-weight: 500;
-        /* margin-left: 200px; */
+        text-align: center;
         color: white;
+        margin-left: 0px;
     }
     #mainbackbtn {
         position: relative;
@@ -208,12 +209,14 @@ border-radius: 10px;
         font-weight: bolder;
         color: white;
         top: -72px;
+        text-align: center;
         /* left: -7px; */
     }
     #btnadd {
         font-size: 30px;
         position: absolute;
-        top: 116px;
+        top: 92px;
+        left: 25%;
     }
 }
 
