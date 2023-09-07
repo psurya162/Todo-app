@@ -6,6 +6,7 @@ var Additempoppup = document.getElementById("Additempoppup")
 var notask = document.getElementById("notask")
 var singlecard = document.getElementById("singlecard")
 let isSinglecard =false
+// let currentsingelcard = null
 //Add task Button
 
 function showAddTask(){
@@ -138,14 +139,18 @@ function addcard(){
     })
 
 
-
+    //hadle cardheading click
     cardHeading.addEventListener('click', function () {
         cardHeading.style.cursor = "pointer";
         singlecard.classList.remove('hide');
         singlecard.classList.add('allign');
         cardcontainer.classList.add('hide');
+
+
+        //create a copy of the card
         let copycard = card.cloneNode(true);
         singlecard.appendChild(copycard);
+
         copycard.lastElementChild.addEventListener('click', function () {
             card.remove();
             copycard.remove();
@@ -154,7 +159,7 @@ function addcard(){
         });
     
 
-        //copying
+        //handle item add for the copied card
         copycard.lastElementChild.previousElementSibling.addEventListener('click' , function(){
             
             
@@ -195,6 +200,8 @@ function addcard(){
             addbutton.addEventListener('click' ,function(){
                 Additempoppup.classList.add('hide')
                 parent.classList.remove('blur')
+
+
                 //create item elements
                 let item=document.createElement('div')
                 item.classList.add('additemms')
@@ -208,7 +215,10 @@ function addcard(){
                 item.appendChild(itemtext)
                 item.appendChild(markdone)
     
-    
+                markdone.addEventListener('click', function () {
+                    itemtext.style.textDecoration = "line-through";
+                    markdone.classList.add('hide');
+                });
                 
 
                
@@ -218,28 +228,32 @@ function addcard(){
                 itemtext.innerText=itemname.value
                 markdone.innerText="Mark done"
                 
-                //appendig the item to item list
-                itemList.appendChild(item)
+                // Append the item to item list of the cloned card
+           
 
                 
                
     
                 Additempoppup.innerText = ""
 
-                if (singlecard.children.length >0) {
+                if (singlecard) {
                     let itemclone = item.cloneNode(true);
                     copycard.appendChild(itemclone);
                 
                  
                     let markdoneClone = markdone.cloneNode(true);
-                
+                    let itemtexts = itemtext.cloneNode(true)
+                    
                    
+                    itemclone.appendChild(itemtexts)
                     itemclone.appendChild(markdoneClone);
+                  
+                    
                 
                     
                     markdoneClone.addEventListener('click', function () {
                        
-                        itemtext.style.textDecoration = "line-through";
+                        itemtexts.style.textDecoration = "line-through";
                         markdoneClone.classList.add('hide');
                     });
                 }
