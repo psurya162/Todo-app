@@ -215,8 +215,15 @@ border-radius: 10px;
     #btnadd {
         font-size: 30px;
         position: absolute;
-        top: 92px;
-        left: 25%;
+        top: 121px;
+    left: 31%;
+    }
+    .card{
+        min-width: 300px;
+        min-height: 400px ;
+        
+        background-color: white;
+        border-radius: 10px;
     }
 }
 
