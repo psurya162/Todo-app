@@ -5,7 +5,7 @@ var parent = document.getElementById("Parent")
 var Additempoppup = document.getElementById("Additempoppup")
 var notask = document.getElementById("notask")
 var singlecard = document.getElementById("singlecard")
-let isSinglecard =false
+// let isSinglecard =false
 // let currentsingelcard = null
 //Add task Button
 
@@ -230,7 +230,7 @@ function addcard(){
                 
                 // Append the item to item list of the cloned cardsss
            
-
+               
                 
                
     
@@ -240,23 +240,17 @@ function addcard(){
                     let itemclone = item.cloneNode(true);
                     copycard.appendChild(itemclone);
                 
-                 
-                    let markdoneClone = markdone.cloneNode(true);
-                    let itemtexts = itemtext.cloneNode(true)
-                    
-                   
-                    itemclone.appendChild(itemtexts)
-                    itemclone.appendChild(markdoneClone);
-                  
                     
                 
-                    
+                    let markdoneClone = itemclone.querySelector('.markdonee');
+                    let itemtextClone = itemclone.querySelector('.span1');
+                
                     markdoneClone.addEventListener('click', function () {
-                       
-                        itemtexts.style.textDecoration = "line-through";
+                        itemtextClone.style.textDecoration = "line-through";
                         markdoneClone.classList.add('hide');
                     });
                 }
+                
             })
             
         
