@@ -228,7 +228,7 @@ function addcard(){
                 itemtext.innerText=itemname.value
                 markdone.innerText="Mark done"
                 
-                // Append the item to item list of the cloned card
+                // Append the item to item list of the cloned cardsss
            
 
                 
