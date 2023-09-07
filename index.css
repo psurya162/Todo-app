@@ -1,0 +1,190 @@
+
+body{
+    background-color: black;
+}
+.hide{
+    display: none !important;
+}
+#task{
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+}
+#list{
+    font-weight: lighter;
+    font-size: 40px;
+    color: white;
+}
+#flex{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+#notask{
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 200px;
+    color: white;
+}
+#showaddtaskk{
+    cursor: pointer;
+    height: 30px;
+    background-color: black;
+    
+}
+.fa-solid{
+    background-color: black;
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 30px;
+    height: 25px;
+    
+   
+    
+}
+.box{
+    /* border: 2px solid red; */
+width: 350px;
+min-height: 200px;
+position: fixed;
+left: 50%;
+transform: translateX(-50%);
+top: 40%;
+background-color:white;
+border-radius: 10px;
+
+
+
+}
+.card{
+    min-width: 300px;
+    min-height: 400px ;
+    
+    background-color: white;
+    border-radius: 10px;
+}
+.blur{
+    filter: blur(3px);
+}
+#cardcontainer{
+    margin-top: 20px;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+    
+    
+    
+}
+#tasknamess{
+    text-align: center;
+    color: orangered;
+    text-transform: uppercase;
+    font-size: 25px;
+    /* margin-top: 10px; */
+    /* padding-top: 25px; */
+}
+.mainaddclose{
+    width: 91px;
+    height: 36px;
+    margin-left: 52px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: orange;
+    cursor: pointer;
+
+
+}
+#cardname{
+    position: relative;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 251px;
+    height: 38px;
+    
+    border-radius: 10px;
+}
+.allign h3{
+    text-align: center;
+}
+.cardtext h3{
+    text-align: center;
+    padding-top: 10px;
+    color: orangered;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.box2 {
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 49%;
+    transform: translateX(-50%);
+    color: orangered;
+    font-size: 20px;
+
+}
+.box2 input{
+    width: 90%;
+    height: 25px;
+}
+.addcloseee{
+    margin: 20px;
+    width: 83px;
+    height: 37px;
+    border-radius: 10px;
+    background-color: orange;
+}
+#singlecard{
+    display: flex;
+    justify-content: space-around;
+}
+::placeholder{
+    text-align: center;
+}
+.span1{
+    margin: 10px;
+    /* padding: 20px; */
+}
+.markdonee{
+    background-color: aqua;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.additemms{
+    text-align: center;
+    margin: 25px;
+}
+/* .additemdeletebtn{
+    margin-left: 106px;
+   
+    margin-right: -93px;
+} */
+#mainbackbtn{
+    position: relative;
+    top: 34px;
+    left: 63px;
+}
+#Additemss{
+    color: white;
+    display: inline;
+    font-size: 25px;
+}
+#btnadd{
+    font-size: 30px;
+}
+.addtrashbtn{
+    margin: 10px;
+}
+.fa-trash{
+    background-color: red;
+    height: 25px;
+    margin-left: 210px;
+}
+
+
+
