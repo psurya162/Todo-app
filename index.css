@@ -8,23 +8,43 @@ body{
 #task{
     font-size: 40px;
     font-weight: bolder;
-    color: white;
+    color: blue;
+}
+.cardheadingtop{
+    color: slategrey;
+    text-transform: uppercase;
 }
 #list{
     font-weight: lighter;
     font-size: 40px;
-    color: white;
+    color: orangered;
 }
+.cardname_head{
+    background-color: black;
+    color: white;
+    font-size: 40px;
+}
+/* .item {
+    z-index: 1;
+  }
+  
+  .addbutton {
+    z-index: 0;
+  } */
+
 #flex{
-    margin-top: 50px;
+    /* margin-top: 50px; */
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 #notask{
     font-size: 30px;
     font-weight: 500;
-    margin-left: 200px;
-    color: white;
+    /* margin-left: 200px; */
+    color: slategrey;
+    text-align: center;
+    text-transform: uppercase;
 }
 #showaddtaskk{
     cursor: pointer;
@@ -81,7 +101,7 @@ border-radius: 10px;
 }
 #tasknamess{
     text-align: center;
-    color: orangered;
+    color: black;
     text-transform: uppercase;
     font-size: 25px;
     /* margin-top: 10px; */
@@ -130,6 +150,7 @@ border-radius: 10px;
 .box2 input{
     width: 90%;
     height: 25px;
+    border-radius: 10px;
 }
 .addcloseee{
     margin: 20px;
@@ -141,6 +162,8 @@ border-radius: 10px;
 #singlecard{
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
 }
 ::placeholder{
     text-align: center;
@@ -166,8 +189,13 @@ border-radius: 10px;
 } */
 #mainbackbtn{
     position: relative;
-    top: 34px;
-    left: 63px;
+    top: 70px;
+    left: 57px;
+    font-size: 30px;
+   
+}
+#bck{
+    display: inline;
 }
 #Additemss{
     color: white;
@@ -186,8 +214,8 @@ border-radius: 10px;
     margin-left: 210px;
 }
 @media screen and (min-width:250px) and (max-width:500px){
-    #flex {
-        
+    /* .parent {
+        display: flex;
         flex-direction: column;
         
     }
@@ -210,13 +238,13 @@ border-radius: 10px;
         color: white;
         top: -72px;
         text-align: center;
-        /* left: -7px; */
+        /* left: -7px; 
     }
     #btnadd {
         font-size: 30px;
         position: absolute;
         top: 121px;
-    left: 31%;
+        left: 31%;
     }
     .card{
         min-width: 300px;
@@ -224,7 +252,7 @@ border-radius: 10px;
         
         background-color: white;
         border-radius: 10px;
-    }
+    } */
 }
 
 
