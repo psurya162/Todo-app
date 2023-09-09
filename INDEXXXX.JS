@@ -7,9 +7,7 @@ var notask = document.getElementById("notask")
 var singlecard = document.getElementById("singlecard")
 var cardNameHead = document.getElementById("cardname_head")
 
-// storage of clone card items
-// var clonedCardItems = [];
-//Add task Button
+
 
 function showAddTask() {
     addtaskpopup.classList.remove('hide')
@@ -139,9 +137,11 @@ function addcard() {
             card.remove();
             copycard.remove();
             singleCardHeading.remove(); // Remove the heading as well
-            if (cardcontainer.innerText === '')
+            if (cardcontainer.innerText === ''){
                 notask.classList.remove('hide');
-            back()
+            }
+            back()  
+            
         });
 
         //handle item add for the copied card
@@ -199,11 +199,14 @@ function addcard() {
                 });
 
                 //values
+                itemList.appendChild(item);
                 itemtext.innerText = itemname.value
                 markdone.innerText = "Mark done"
 
                 // Append the item to item list of the cloned cardsss
+                
                 Additempoppup.innerHTML = "";
+                
 
                 if (singlecard) {
                     let itemclone = item.cloneNode(true);
