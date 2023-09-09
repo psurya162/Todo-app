@@ -7,6 +7,8 @@ var notask = document.getElementById("notask")
 var singlecard = document.getElementById("singlecard")
 var cardNameHead = document.getElementById("cardname_head")
 
+// storage of clone card items
+// var clonedCardItems = [];
 //Add task Button
 
 function showAddTask() {
@@ -62,6 +64,7 @@ function addcard() {
     addItems.addEventListener('click', function () {
         Additempoppup.classList.remove('hide')
         parent.classList.add('blur')
+        Additempoppup.innerHTML="";
 
         //create Item
         let itemPopupHeading = document.createElement('h3')
@@ -91,6 +94,7 @@ function addcard() {
         addbutton.addEventListener('click', function () {
             Additempoppup.classList.add('hide')
             parent.classList.remove('blur')
+
             //create item elements
             let item = document.createElement('div')
             item.classList.add('additemms')
@@ -114,6 +118,8 @@ function addcard() {
             //appendig the item to item list
             itemList.appendChild(item)
             Additempoppup.innerText = ""
+
+            // clonedCardItems.push(item.cloneNode(true))
         })
     })
 
@@ -142,6 +148,7 @@ function addcard() {
         copycard.lastElementChild.previousElementSibling.addEventListener('click', function () {
             Additempoppup.classList.remove('hide')
             parent.classList.add('blur')
+            Additempoppup.innerHTML="";
 
             //create Item
             let itemPopupHeading = document.createElement('h3')
@@ -169,6 +176,8 @@ function addcard() {
 
             })
 
+            
+
             addbutton.addEventListener('click', function () {
                 Additempoppup.classList.add('hide')
                 parent.classList.remove('blur')
@@ -194,19 +203,19 @@ function addcard() {
                 markdone.innerText = "Mark done"
 
                 // Append the item to item list of the cloned cardsss
-                Additempoppup.innerText = ""
+                Additempoppup.innerHTML = "";
 
                 if (singlecard) {
                     let itemclone = item.cloneNode(true);
-            let copylist = copycard.querySelector('div');
-            copylist.appendChild(itemclone);
+                    let copylist = copycard.querySelector('div');
+                    copylist.appendChild(itemclone);
 
-            let markdoneClone = itemclone.querySelector('.markdonee'); // Find the cloned markdone button
-            let itemtexts = itemclone.querySelector('.span1'); // Find the cloned item text
+                     let markdoneClone = itemclone.querySelector('.markdonee'); // Find the cloned markdone button
+                    let itemtexts = itemclone.querySelector('.span1'); // Find the cloned item text
 
-            markdoneClone.addEventListener('click', function () {
-                itemtexts.style.textDecoration = "line-through";
-                markdoneClone.classList.add('hide');
+                    markdoneClone.addEventListener('click', function () {
+                    itemtexts.style.textDecoration = "line-through";
+                    markdoneClone.classList.add('hide');
             });
                 }
             })
@@ -220,6 +229,8 @@ function back() {
     singlecard.classList.add('hide')
     cardcontainer.classList.remove('hide')
     singlecard.innerText = ""
+
     
+    cardcontainer.appendChild(copycard);
 }
 
