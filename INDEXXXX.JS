@@ -137,7 +137,7 @@ function addcard() {
         copycard.lastElementChild.addEventListener('click', function () {
             card.remove();
             copycard.remove();
-            singleCardHeading.remove(); // Remove the heading as well
+            
             if (cardcontainer.innerText === ''){
                 notask.classList.remove('hide');
             }
@@ -178,7 +178,6 @@ function addcard() {
             })
 
             
-
             addbutton.addEventListener('click', function () {
                 Additempoppup.classList.add('hide')
                 parent.classList.remove('blur')
@@ -212,32 +211,34 @@ function addcard() {
                 if (singlecard) {
                     let copylist = copycard.querySelector('div');
                     let itemclone = item.cloneNode(true);
+
                     copylist.appendChild(itemclone);
 
                     let markdoneClone = itemclone.querySelector('.markdonee'); // Find the cloned markdone button
                     let itemtexts = itemclone.querySelector('.span1'); // Find the cloned item text
-
+                    
                     markdoneClone.addEventListener('click', function () {
-                        itemtexts.style.textDecoration = "line-through";
                         itemtext.style.textDecoration = "line-through";
+                        itemtexts.style.textDecoration = "line-through";   
                         markdoneClone.classList.add('hide');
                         markdone.classList.add('hide')
             });
                 }
             })
         })
-        parent.firstElementChild.classList.remove('hide')
         
+
+        parent.firstElementChild.classList.remove('hide')
+      task.classList.add('hide')
     })
 }
 function back() {
     cardNameHead.classList.add('hide')
+    task.classList.remove('hide')
     parent.firstElementChild.classList.add('hide')
     singlecard.classList.add('hide')
     cardcontainer.classList.remove('hide')
     singlecard.innerText = ""
-
-    
     cardcontainer.appendChild(copycard);
 }
 
