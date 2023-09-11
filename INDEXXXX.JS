@@ -196,8 +196,7 @@ function addcard() {
                 item.appendChild(markdone)
                 markdone.addEventListener('click', function () {
                     itemtext.style.textDecoration = "line-through";
-                   markdoneClone.classList.add('hide')
-                    
+                    markdone.classList.add('hide');
                 });
 
                 //values
