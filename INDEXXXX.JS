@@ -210,23 +210,24 @@ function addcard() {
                 
 
                 if (singlecard) {
-                    let itemclone = item.cloneNode(true);
                     let copylist = copycard.querySelector('div');
+                    let itemclone = item.cloneNode(true);
                     copylist.appendChild(itemclone);
 
-                     let markdoneClone = itemclone.querySelector('.markdonee'); // Find the cloned markdone button
+                    let markdoneClone = itemclone.querySelector('.markdonee'); // Find the cloned markdone button
                     let itemtexts = itemclone.querySelector('.span1'); // Find the cloned item text
 
                     markdoneClone.addEventListener('click', function () {
-                    itemtexts.style.textDecoration = "line-through";
-                    
-                    markdoneClone.classList.add('hide');
-                    markdone.classList.add('hide')
+                        itemtexts.style.textDecoration = "line-through";
+                        itemtext.style.textDecoration = "line-through";
+                        markdoneClone.classList.add('hide');
+                        markdone.classList.add('hide')
             });
                 }
             })
         })
         parent.firstElementChild.classList.remove('hide')
+        
     })
 }
 function back() {
