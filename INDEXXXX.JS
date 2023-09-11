@@ -72,6 +72,7 @@ function addcard() {
         let closebutton = document.createElement('button')
 
         //append Elements
+        
         Additempoppup.appendChild(itemPopupHeading)
         Additempoppup.appendChild(itemname)
         Additempoppup.appendChild(addbutton)
@@ -195,7 +196,8 @@ function addcard() {
                 item.appendChild(markdone)
                 markdone.addEventListener('click', function () {
                     itemtext.style.textDecoration = "line-through";
-                    markdone.classList.add('hide');
+                   markdoneClone.classList.add('hide')
+                    
                 });
 
                 //values
@@ -218,7 +220,9 @@ function addcard() {
 
                     markdoneClone.addEventListener('click', function () {
                     itemtexts.style.textDecoration = "line-through";
+                    
                     markdoneClone.classList.add('hide');
+                    markdone.classList.add('hide')
             });
                 }
             })
