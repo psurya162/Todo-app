@@ -16,7 +16,7 @@ function showAddTask() {
 
 }
 
-//hide task buttob
+//HIDE TASK
 function hideAddTask() {
     addtaskpopup.classList.add('hide')
     parent.classList.remove('blur')
@@ -51,34 +51,34 @@ function addcard() {
     deletebutton.innerText = ""
     deletebutton.setAttribute('class', 'fa-solid fa-trash')
 
-    //delete button logic
+    //DELETE BUTTON
     deletebutton.addEventListener('click', function () {
         card.remove()
         if (cardcontainer.innerText === '')
             notask.classList.remove('hide')
     })
 
-    //add item
+    //ADD ITEM 
     addItems.addEventListener('click', function () {
         Additempoppup.classList.remove('hide')
         parent.classList.add('blur')
         Additempoppup.innerHTML="";
 
-        //create Item
+        //CREATE ITEM
         let itemPopupHeading = document.createElement('h3')
         let itemname = document.createElement('input')
         itemname.placeholder = 'Item Name';
         let addbutton = document.createElement('button')
         let closebutton = document.createElement('button')
 
-        //append Elements
+        //APPEND ELEMENTS
         
         Additempoppup.appendChild(itemPopupHeading)
         Additempoppup.appendChild(itemname)
         Additempoppup.appendChild(addbutton)
         Additempoppup.appendChild(closebutton)
 
-        //give values to Element
+        //GIVING VALUES TO ELEMENTS
         itemPopupHeading.innerText = "Add New Item"
         addbutton.innerText = "add"
         closebutton.innerText = "close"
@@ -94,7 +94,7 @@ function addcard() {
             Additempoppup.classList.add('hide')
             parent.classList.remove('blur')
 
-            //create item elements
+            //CREATE ITEM ELEMENT
             let item = document.createElement('div')
             item.classList.add('additemms')
             let itemtext = document.createElement('span')
@@ -102,7 +102,7 @@ function addcard() {
             let markdone = document.createElement('button')
             markdone.classList.add('markdonee')
 
-            //append
+            //APPEND IT
             item.appendChild(itemtext)
             item.appendChild(markdone)
             markdone.addEventListener('click', function () {
@@ -110,19 +110,19 @@ function addcard() {
                 markdone.classList.add('hide')
             })
 
-            //values
+            //GIVING VALUES
             itemtext.innerText = itemname.value
             markdone.innerText = "Mark done"
 
-            //appendig the item to item list
+            //APPENDING TH ITEM IN LIST
             itemList.appendChild(item)
             Additempoppup.innerText = ""
 
-            // clonedCardItems.push(item.cloneNode(true))
+            
         })
     })
 
-    //hadle cardheading click
+    //CARDHEADING LISTENER
     cardHeading.addEventListener('click', function () {
         cardHeading.style.cursor  = 'pointer'
         cardNameHead.classList.remove('hide')
@@ -130,7 +130,7 @@ function addcard() {
         singlecard.classList.remove('hide')
         cardcontainer.classList.add('hide')
 
-        //create a copy of the card
+        //CREATE A COPY OF CARD
         let copycard = card.cloneNode(true);
         singlecard.appendChild(copycard);
 
@@ -144,8 +144,22 @@ function addcard() {
             back()  
             
         });
+        //Markdone button
+        let markdoneClone = copycard.querySelectorAll('.markdonee'); // Find the cloned markdone button
+                    
+                    console.log(markdoneClone)
 
-        //handle item add for the copied card
+                    for(let i=0;i<markdoneClone.length;i++){
+                        markdoneClone[i].addEventListener('click', function () {
+                            markdoneClone[i].previousSibling.style.textDecoration = "line-through";
+                            // itemtext.style.textDecoration = "line-through";   
+                            markdoneClone[i].classList.add('hide');
+                            // markdone.classList.add('hide')
+                        });
+                    }
+                    
+
+        //ITEM ADD FOR THE CLONE CARD
         copycard.lastElementChild.previousElementSibling.addEventListener('click', function () {
             Additempoppup.classList.remove('hide')
             parent.classList.add('blur')
@@ -158,13 +172,13 @@ function addcard() {
             let addbutton = document.createElement('button')
             let closebutton = document.createElement('button')
 
-            //append Elements
+            //APPEND ELEMENTS
             Additempoppup.appendChild(itemPopupHeading)
             Additempoppup.appendChild(itemname)
             Additempoppup.appendChild(addbutton)
             Additempoppup.appendChild(closebutton)
 
-            //give values to Element
+            //GIV VALUES TO ELEMENTS
             itemPopupHeading.innerText = "Add New Item"
             addbutton.innerText = "add"
             closebutton.innerText = "close"
@@ -182,7 +196,7 @@ function addcard() {
                 Additempoppup.classList.add('hide')
                 parent.classList.remove('blur')
 
-                //create item elements
+                //CREATE ITEM IN ELEMENTS
                 let item = document.createElement('div')
                 item.classList.add('additemms')
                 let itemtext = document.createElement('span')
@@ -190,7 +204,7 @@ function addcard() {
                 let markdone = document.createElement('button')
                 markdone.classList.add('markdonee')
 
-                //append
+                //APPEND
                 item.appendChild(itemtext)
                 item.appendChild(markdone)
                 markdone.addEventListener('click', function () {
@@ -198,10 +212,11 @@ function addcard() {
                     markdone.classList.add('hide');
                 });
 
-                //values
+                //VALUES
                 itemList.appendChild(item);
                 itemtext.innerText = itemname.value
                 markdone.innerText = "Mark done"
+                
 
                 // Append the item to item list of the cloned cardsss
                 
@@ -214,15 +229,23 @@ function addcard() {
 
                     copylist.appendChild(itemclone);
 
-                    let markdoneClone = itemclone.querySelector('.markdonee'); // Find the cloned markdone button
-                    let itemtexts = itemclone.querySelector('.span1'); // Find the cloned item text
-                    
+                    // Find the cloned markdone button
+                    let markdoneClone = itemclone.querySelector('.markdonee');
+
+                    // Find the cloned item text
+                    let itemtexts = itemclone.querySelector('.span1');
+
+                    // Add an event listener to the cloned markdone button
                     markdoneClone.addEventListener('click', function () {
-                        itemtext.style.textDecoration = "line-through";
-                        itemtexts.style.textDecoration = "line-through";   
+                        itemtexts.style.textDecoration = "line-through";
+                        itemtext.style.textDecoration = "line-through";   
                         markdoneClone.classList.add('hide');
                         markdone.classList.add('hide')
-            });
+                    });
+
+                    
+                   
+                    
                 }
             })
         })
@@ -239,6 +262,6 @@ function back() {
     singlecard.classList.add('hide')
     cardcontainer.classList.remove('hide')
     singlecard.innerText = ""
-    cardcontainer.appendChild(copycard);
+  
 }
 
