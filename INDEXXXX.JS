@@ -6,6 +6,7 @@ var Additempoppup = document.getElementById("Additempoppup")
 var notask = document.getElementById("notask")
 var singlecard = document.getElementById("singlecard")
 var cardNameHead = document.getElementById("cardname_head")
+var itemList;
 
 
 
@@ -29,7 +30,7 @@ function addcard() {
     let card = document.createElement('div')
     let cardHeading = document.createElement('h3')
     let line = document.createElement('hr')
-    let itemList = document.createElement('div')
+     itemList = document.createElement('div')
     let addItems = document.createElement('button')
     let deletebutton = document.createElement('button')
 
@@ -130,6 +131,9 @@ function addcard() {
         singlecard.classList.remove('hide')
         cardcontainer.classList.add('hide')
 
+       
+
+
         //CREATE A COPY OF CARD
         let copycard = card.cloneNode(true);
         singlecard.appendChild(copycard);
@@ -147,7 +151,7 @@ function addcard() {
         //Markdone button
         let markdoneClone = copycard.querySelectorAll('.markdonee'); // Find the cloned markdone button
                     
-                    console.log(markdoneClone)
+                    // console.log(markdoneClone)
 
                     for(let i=0;i<markdoneClone.length;i++){
                         markdoneClone[i].addEventListener('click', function () {
@@ -262,6 +266,29 @@ function back() {
     singlecard.classList.add('hide')
     cardcontainer.classList.remove('hide')
     singlecard.innerText = ""
+
+    
   
 }
+function back() {
+    cardNameHead.classList.add('hide');
+    task.classList.remove('hide');
+    parent.firstElementChild.classList.add('hide');
+    singlecard.classList.add('hide');
+    cardcontainer.classList.remove('hide');
+    singlecard.innerText = "";
 
+    if (itemList) {
+        // Update line-through styles for items in the original card
+        let items = itemList.querySelectorAll('.span1');
+        items.forEach(function (item) {
+            if (!item.style.textDecoration.includes("line-through")) {
+                item.style.textDecoration = "line-through";
+            }
+        });
+        let markdoneButtons = itemList.querySelectorAll('.markdonee');
+        markdoneButtons.forEach(function (markdone) {
+            markdone.classList.add('hide');
+        });
+    }
+}
