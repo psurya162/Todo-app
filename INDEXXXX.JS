@@ -259,17 +259,7 @@ function addcard() {
       task.classList.add('hide')
     })
 }
-function back() {
-    cardNameHead.classList.add('hide')
-    task.classList.remove('hide')
-    parent.firstElementChild.classList.add('hide')
-    singlecard.classList.add('hide')
-    cardcontainer.classList.remove('hide')
-    singlecard.innerText = ""
 
-    
-  
-}
 function back() {
     cardNameHead.classList.add('hide');
     task.classList.remove('hide');
@@ -286,6 +276,7 @@ function back() {
                 item.style.textDecoration = "line-through";
             }
         });
+         // Hide markdone buttons in the original cards
         let markdoneButtons = itemList.querySelectorAll('.markdonee');
         markdoneButtons.forEach(function (markdone) {
             markdone.classList.add('hide');
