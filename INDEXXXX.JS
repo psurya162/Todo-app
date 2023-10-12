@@ -30,7 +30,7 @@ function addcard() {
     let card = document.createElement('div')
     let cardHeading = document.createElement('h3')
     let line = document.createElement('hr')
-     itemList = document.createElement('div')
+    let itemList = document.createElement('div')
     let addItems = document.createElement('button')
     let deletebutton = document.createElement('button')
 
@@ -190,6 +190,7 @@ function addcard() {
             closebutton.classList.add('addcloseee')
 
             closebutton.addEventListener('click', function () {
+                
                 Additempoppup.classList.add('hide')
                 parent.classList.remove('blur')
 
@@ -272,14 +273,16 @@ function back() {
         // Update line-through styles for items in the original card
         let items = itemList.querySelectorAll('.span1');
         items.forEach(function (item) {
-            if (!item.style.textDecoration.includes("line-through")) {
+            if (item.style.textDecoration.includes("line-through")) {
                 item.style.textDecoration = "line-through";
             }
         });
          // Hide markdone buttons in the original cards
-        let markdoneButtons = itemList.querySelectorAll('.markdonee');
-        markdoneButtons.forEach(function (markdone) {
-            markdone.classList.add('hide');
-        });
+         let markdoneButtons = itemList.querySelectorAll('.markdonee');
+         markdoneButtons.forEach(function (markdone) {
+             markdone.classList.add('hide');
+             // Remove the event listener for the markdone button
+             markdone.removeEventListener('click');
+         });
     }
 }
