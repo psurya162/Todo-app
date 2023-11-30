@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"   />
     <link rel="stylesheet" href="./index.css">
     <title>To-Do js</title>
 </head>
 
 <body>
     <div id="Parent">
-     
-        
-        <p  onclick="back()" class="hide fa-solid fa-circle-left" id="mainbackbtn" itemid="bck"></p>
+
+
+        <p onclick="back()" class="hide fa-solid fa-circle-left" id="mainbackbtn" itemid="bck"></p>
 
         <div id="flex">
-        
-        <h1 id="task">Task <span id="list">List</span></h1>
-        <h1 id="cardname_head" class="cardname_head hide"></h1>
-        <div id="btnadd">
-       
 
-            
-        <p id="Additemss" id="showaddtaskk" onclick="showAddTask()"><i class="fa-solid fa-circle-plus"></i>Add Item</p>
+            <h1 id="task">TASK <span id="list">LIST</span></h1>
+            <h1 id="cardname_head" class="cardname_head hide"></h1>
+            <div id="btnadd">
+
+
+
+                <p id="Additemss" id="showaddtaskk" onclick="showAddTask()"><i class="fa-solid fa-circle-plus"></i>ADD
+                    ITEM</p>
+            </div>
+
+
         </div>
-        
-        
-    </div>
-   
-    
-    <p id="notask" class="">No Item In The To-Do List</p>
-   
-    <div id="cardcontainer"></div>
 
-    <div id="singlecard" class="hide"></div>
-</div>
+
+        <p id="notask" class="">No Item In The To-Do List</p>
+
+        <div id="cardcontainer"></div>
+
+        <div id="singlecard" class="hide"></div>
+    </div>
     <!-- Add task Popup -->
 
     <div class="hide box" id="addtaskpopup">
         <h3 id="tasknamess">Task Name</h3>
         <input type="text" id="cardname" placeholder="Enter task"><br>
         <button class="mainaddclose" onclick="addcard()">Add</button>
-        <button  class="mainaddclose" onclick="hideAddTask()">Close</button>
+        <button class="mainaddclose" onclick="hideAddTask()">Close</button>
     </div>
 
 
-    <div ><  button="fa-solid fa-trash " ></button></div>
-    <div >< button="fa-solid fa-circle-plus " ></button></div>
-    
+    <div>
+        < button="fa-solid fa-trash "></button>
+    </div>
+    <div>
+        < button="fa-solid fa-circle-plus "></button>
+    </div>
+
     <div id="Additempoppup" class="box hide box2"></div>
 
 
     <script src="./INDEXXXX.JS"></script>
 </body>
+
 </html>

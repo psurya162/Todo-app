@@ -6,7 +6,8 @@ var Additempoppup = document.getElementById("Additempoppup")
 var notask = document.getElementById("notask")
 var singlecard = document.getElementById("singlecard")
 var cardNameHead = document.getElementById("cardname_head")
-var itemList;
+var itemList=null
+
 
 
 
@@ -16,6 +17,8 @@ function showAddTask() {
    
 
 }
+
+
 
 //HIDE TASK
 function hideAddTask() {
@@ -121,6 +124,7 @@ function addcard() {
 
             
         })
+        
     })
 
     //CARDHEADING LISTENER
@@ -147,22 +151,21 @@ function addcard() {
             }
             back()  
             
+            
         });
         //Markdone button
         let markdoneClone = copycard.querySelectorAll('.markdonee'); // Find the cloned markdone button
                     
                     // console.log(markdoneClone)
 
-                    for(let i=0;i<markdoneClone.length;i++){
+                    for (let i = 0; i < markdoneClone.length; i++) {
                         markdoneClone[i].addEventListener('click', function () {
-                            markdoneClone[i].previousSibling.style.textDecoration = "line-through";
-                            // itemtext.style.textDecoration = "line-through";   
+                            let itemtext = markdoneClone[i].previousSibling;
+                            itemtext.style.textDecoration = "line-through";
                             markdoneClone[i].classList.add('hide');
-                            // markdone.classList.add('hide')
+                            itemtext.classList.add('mark-done'); // Add the mark-done class
                         });
                     }
-                    
-
         //ITEM ADD FOR THE CLONE CARD
         copycard.lastElementChild.previousElementSibling.addEventListener('click', function () {
             Additempoppup.classList.remove('hide')
@@ -269,20 +272,14 @@ function back() {
     cardcontainer.classList.remove('hide');
     singlecard.innerText = "";
 
-    if (itemList) {
-        // Update line-through styles for items in the original card
-        let items = itemList.querySelectorAll('.span1');
-        items.forEach(function (item) {
-            if (item.style.textDecoration.includes("line-through")) {
-                item.style.textDecoration = "line-through";
-            }
-        });
-         // Hide markdone buttons in the original cards
-         let markdoneButtons = itemList.querySelectorAll('.markdonee');
-         markdoneButtons.forEach(function (markdone) {
-             markdone.classList.add('hide');
-             // Remove the event listener for the markdone button
-             markdone.removeEventListener('click');
-         });
-    }
+    // Reset styles for items marked as done
+    let items = document.querySelectorAll('.markdonee'); // assuming this class marks completed tasks
+
+    items.forEach(function (markdoneClone) {
+        let itemtext = markdoneClone.previousSibling;
+        itemtext.style.textDecoration = "line-through";
+        markdoneClone.classList.add('hide');
+    });
 }
+
+
